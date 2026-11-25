@@ -19,5 +19,6 @@ pycparser==3.12
 python-dotenv==1.2.4
 requests==2.34.2
 requests-oauthlib==2.0.0
+Sheets==0.6
 urllib3==2.8.0
 Werkzeug==3.1.9

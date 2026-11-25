@@ -15,7 +15,7 @@ def login():
     error = None
     if request.method == "POST":
         email = request.form["email"]
-        user = helpers.find_user(sheets.get_rows(), email)
+        user = helpers.find_user(email, sheets.getRows())
 
         # checks if user exists, and has paid
         if user is None:
@@ -34,7 +34,7 @@ def seats():
     if "email" not in session:
         return redirect(url_for("login"))
 
-    user = helpers.find_user(sheets.get_rows(), session["email"])
+    user = helpers.find_user(session['email'], sheets.getRows())
     if user is None or not user["paid"]:
         session.clear()
         return redirect(url_for("login"))
