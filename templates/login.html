@@ -1,16 +1,18 @@
 {% extends "base.html" %}
+{% block main_class %}narrow{% endblock %}
 {% block content %}
-  <h1>Choose your seats</h1>
+  <div class="card">
+    <h1>Choose your seats</h1>
+    <p class="subtitle">Enter the email address you booked with to select your seats.</p>
 
-  {% if error %}
-    <p class="error">{{ error }}</p>
-  {% endif %}
+    {% if error %}
+      <div class="alert">{{ error }}</div>
+    {% endif %}
 
-  <form method="post" class="login">
-    <label>
-      Email address
-      <input type="email" name="email" required autofocus>
-    </label>
-    <button type="submit">Continue</button>
-  </form>
+    <form method="post" class="login">
+      <label for="email">Email address</label>
+      <input type="email" id="email" name="email" placeholder="you@example.com" required autofocus>
+      <button type="submit" class="btn">Continue</button>
+    </form>
+  </div>
 {% endblock %}

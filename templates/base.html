@@ -3,11 +3,17 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Event Seating</title>
+  <title>Seat Selection | Engineering Formal</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
-  <main>
+  <header class="site-header">
+    <span class="brand">Engineering Formatl</span>
+    {% if session.email %}
+      <a class="logout" href="{{ url_for('logout') }}">Log out</a>
+    {% endif %}
+  </header>
+  <main class="{% block main_class %}{% endblock %}">
     {% block content %}{% endblock %}
   </main>
 </body>
